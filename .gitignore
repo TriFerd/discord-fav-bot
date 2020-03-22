@@ -1,0 +1,7 @@
+.vscode/
+.vscode-test
+.eslintrc.js
+
+.node_repl_history
+
+node_modules/
