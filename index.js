@@ -30,6 +30,9 @@ client.on('message', (message) => {
 
   const command = client.commands.get(commandName);
   if (command.guildOnly && message.channel.type !== 'text') {
+    if (message.channel.type === 'dm') {
+      return message.channel.send('I can\'t execute that command inside DMs!');
+    }
     return message.channel.reply('I can\'t execute that command inside DMs!');
   }
   if (command.args && !args.length) {
