@@ -39,7 +39,7 @@ module.exports = {
                   const messageAttachmentUrl = m.attachments.values().next().value.url;
                   messageArray.push({ content: m.content, attachmentUrl: messageAttachmentUrl });
                 } else {
-                  messageArray.push({ content: m.content, imageUrl: '' });
+                  messageArray.push({ content: m.content, attachmentUrl: '' });
                 }
                 m.react(checkedReaction);
               }
