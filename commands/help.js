@@ -33,6 +33,12 @@ module.exports = {
 
     if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
     if (command.description) data.push(`**Description:** ${command.description}`);
+    if (command.parameters) {
+      data.push('**Parameters:**');
+      for (const key in command.parameters) {
+        data.push(`\`${key}\`\n\t ${command.parameters[key]}`);
+      }
+    }
     if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
 
     data.push(`**Cooldown:** ${command.cooldown || 0} second(s)`);
