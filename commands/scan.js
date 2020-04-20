@@ -99,7 +99,7 @@ async function getAndHandleMessages (channel, destChannel, limit, scanMode) {
     if (reachedEnd) {
       break;
     }
-    lastMessageId = messages[messages.length - 1].id;
+    lastMessageId = messages[messages.length - 1][1].id;
 
     if (messages.length !== 100) {
       break;
