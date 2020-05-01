@@ -18,7 +18,7 @@
 2. `cd discord-fav-got`
 3. insert discord bot token in `config.json` (`vim config.json` (paste with `ctrl` + `shift` + `v`))
 4. `docker build -t discord-fav-bot .`
-5. `docker run -d --restart always discord-fav-bot`
+5. `docker run -d --restart always --name discord-fav-bot discord-fav-bot`
 6. (`docker logs <container-id>`)
 
 [source](https://nodejs.org/fr/docs/guides/nodejs-docker-webapp/)
