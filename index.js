@@ -17,7 +17,9 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
-  console.log('Ready!');
+  client.user.setActivity(`${prefix}help`, { type: 'LISTENING' })
+    .then(() => console.log('Ready!'))
+    .catch(console.error);
 });
 
 client.on('message', (message) => {
