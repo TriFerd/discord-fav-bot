@@ -5,8 +5,17 @@ exports.favMessage = async (message) => {
   // init database for dest channel
   const guildId = message.guild.id;
   const keyv = getKeyvForGuild(guildId);
-  const destChannelId = await keyv.get('dest');
 
+  // check for autoscan-feature enabled
+  let autoscanEnabled = await keyv.get('autoscan');
+  if (autoscanEnabled === undefined) {
+    autoscanEnabled = true;
+  }
+  if (!autoscanEnabled) {
+    return;
+  }
+
+  const destChannelId = await keyv.get('dest');
   // check if dest channel is set
   if (destChannelId === undefined) {
     message.channel.send('Destination channel not set. Please set it first.');

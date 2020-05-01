@@ -70,7 +70,7 @@ async function getAndHandleMessages (channel, destChannel, limit, scanMode) {
     }
 
     const messages = Array.from((await channel.messages.fetch(options)).entries());
-    for (const [i, [_, m]] of messages.entries()) {
+    for (const [i, [, m]] of messages.entries()) {
       if (i > limit) {
         reachedEnd = true;
         break;
