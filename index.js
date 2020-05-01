@@ -1,8 +1,9 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { token, prefix } = require('./config.json');
+const { favMessage } = require('./fav-handler.js');
 
-const client = new Discord.Client();
+const client = new Discord.Client({ partials: ['MESSAGE', 'REACTION'] });
 client.commands = new Discord.Collection();
 
 // register commands dynamically
@@ -71,6 +72,21 @@ client.on('message', (message) => {
     console.error(error);
     message.reply('error executing that command');
   }
+});
+
+client.on('messageReactionAdd', async (reaction, user) => {
+  // if reaction is partial -> fetch
+  if (reaction.partial) {
+    // fetched message may be deleted
+    try {
+      await reaction.fetch();
+    } catch (error) {
+      console.log('Message which was reacted upon is deleted: ', error);
+      return; // Return as `reaction.message.author` may be undefined/null
+    }
+  }
+  // Now the message has been cached and is fully available
+  await favMessage(reaction.message);
 });
 
 client.login(token);
