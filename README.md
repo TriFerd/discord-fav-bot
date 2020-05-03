@@ -12,13 +12,19 @@
 
 [source](https://docs.docker.com/engine/security/rootless/)
 
+## deploy using docker-compose
+
+1. `git clone https://github.com/TriFerd/discord-fav-bot.git`
+2. `cd discord-fav-got`
+3. insert discord bot token in `.env` (`vim .env` (paste with `ctrl` + `shift` + `v`))
+4. `docker-compose up --build`
+
 ## deploy using docker
 
 1. `git clone https://github.com/TriFerd/discord-fav-bot.git`
 2. `cd discord-fav-got`
-3. insert discord bot token in `config.json` (`vim config.json` (paste with `ctrl` + `shift` + `v`))
+3. insert discord bot token in `.env` (`vim .env` (paste with `ctrl` + `shift` + `v`))
 4. `docker build -t discord-fav-bot .`
-5. `docker run -d --restart always --name discord-fav-bot discord-fav-bot`
-6. (`docker logs <container-id>`)
+5. `docker run -d --name fav-bot --restart always --env-file .env discord-fav-bot`
 
 [source](https://nodejs.org/fr/docs/guides/nodejs-docker-webapp/)
