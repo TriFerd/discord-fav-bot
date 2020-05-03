@@ -1,0 +1,8 @@
+version: '3'
+services:
+  fav-bot:
+    build: .
+    env_file: .env
+    restart: always
+
+# docker run -d --restart always discord-fav-bot

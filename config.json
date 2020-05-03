@@ -1,7 +1,0 @@
-{
-    "prefix" : "!",
-    "token" : "<your-bot-token-here>",
-    "favReaction": "⭐",
-    "checkedReaction": "✅",
-    "dbPath": "sqlite://database.sqlite"
-}

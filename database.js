@@ -1,6 +1,6 @@
 const Keyv = require('keyv');
 
-const { dbPath } = require('./config.json');
+const { dbPath } = require('./config');
 
 const map = new Map();
 exports.getKeyvForGuild = (id) => {

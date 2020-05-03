@@ -1,5 +1,4 @@
-// @ts-check
-const { favReaction, checkedReaction } = require('../config.json');
+const { favReaction, checkedReaction } = require('../config.js');
 const { getKeyvForGuild } = require('../database.js');
 
 module.exports = {

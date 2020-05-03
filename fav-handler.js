@@ -1,5 +1,5 @@
 const { getKeyvForGuild } = require('./database.js');
-const { favReaction, checkedReaction } = require('./config.json');
+const { favReaction, checkedReaction } = require('./config');
 
 exports.favMessage = async (message) => {
   // init database for dest channel

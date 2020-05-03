@@ -1,5 +1,5 @@
 const { getKeyvForGuild } = require('../database.js');
-const { favReaction } = require('../config.json');
+const { favReaction } = require('../config.js');
 
 module.exports = {
   name: 'autoscan',

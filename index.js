@@ -1,6 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const { token, prefix } = require('./config.json');
+const { token, prefix } = require('./config.js');
 const { favMessage } = require('./fav-handler.js');
 
 const client = new Discord.Client({ partials: ['MESSAGE', 'REACTION'] });
